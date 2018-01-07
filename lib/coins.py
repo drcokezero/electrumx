@@ -1252,3 +1252,23 @@ class Feathercoin(Coin):
     PEERS = [
         'electrumx-ch-1.feathercoin.ch s t',
     ]
+
+
+class XP(Coin):
+    NAME = "eXperience Points"
+    SHORTNAME = "XP"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488b21e")
+    XPRV_VERBYTES = bytes.fromhex("0488ade4")
+    P2PKH_VERBYTE = bytes.fromhex("4b")
+    P2SH_VERBYTES = [bytes.fromhex("14")]
+    WIF_BYTE = bytes.fromhex("80")
+    GENESIS_HASH = ('0000065a10945931644cdda436d5ad07'
+                    '42d085e9dee3e7fdd51b822626727e78')
+    DAEMON = daemon.LegacyRPCDaemon
+    DESERIALIZER = lib_tx.DeserializerTxTime
+    TX_COUNT = 1000 # TODO
+    TX_COUNT_HEIGHT = 10000 # TODO
+    TX_PER_BLOCK = 10 # TODO
+    RPC_PORT = 28191
+    REORG_LIMIT = 1000
